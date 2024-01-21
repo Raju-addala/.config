@@ -9,17 +9,18 @@ BASEDIR=$(dirname $0)
 
 # check if curl exists
 
-if ! (command -v curl &> /dev/null)
+if ! (command -v curl)
 then
     # install curl
     echo "installing curl"
     sudo apt install curl
 
     fatal_check_command curl
-    
+else
+    echo "curl is already installed"
 fi
 
-if ! (command -v zsh &> /dev/null)
+if ! (command -v zsh)
 then
     # install zsh
     echo "installing zsh"
@@ -28,6 +29,8 @@ then
     fatal_check_command zsh
 
     echo zsh is installed, configure in next session
+else
+    echo "zsh is already installed"
 fi
 
 # Check if oh-my-zsh is already installed
@@ -50,3 +53,20 @@ else
 fi
 
 ln -sfn ${BASEDIR}/.my_zsh_rc ~/.zshrc
+
+
+# install fd
+
+# check if fd exists
+
+if ! (command -v fd)
+then
+    # install fd
+    echo "installing fd"
+    curl -L https://github.com/sharkdp/fd/releases/download/v8.4.0/fd-musl_8.4.0_amd64.deb -o fd-musl_8.4.0_amd64.deb
+    sudo dpkg -i fd-musl_8.4.0_amd64.deb
+    fatal_check_command fd
+else
+    echo "fd is already installed"
+fi
+
