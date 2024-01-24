@@ -4,18 +4,16 @@ then
   is_bash=1
 fi
 
+beep(){
+    echo -e "\a"
+}
+
 alarm(){
-    echo -e "\a"
-    sleep 0.5
-    echo -e "\a"
-    sleep 0.5
-    echo -e "\a"
-    sleep 1
-    echo -e "\a"
-    sleep 0.5
-    echo -e "\a"
-    sleep 1
-    echo -e "\a"
+    beep; sleep 0.5; beep; sleep 0.5; beep;
+    sleep 1;
+    beep; sleep 0.5; beep;
+    sleep 1;
+    beep;
 }
 checkping(){
     checktask "ping -o $1 |head -5|egrep ttl"
