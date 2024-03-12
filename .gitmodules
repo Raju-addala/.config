@@ -1,0 +1,12 @@
+[submodule "akash_nvim_config"]
+	path = akash_nvim_config
+	url = https://github.com/akrocks97/nvim_config.git
+[submodule "my_nvim_config"]
+	path = my_nvim_config
+	url = git@github.com:Raju-addala/nvim_configuration.git
+[submodule "siraj_dotconfone"]
+	path = siraj_dotconfone
+	url = //github.com/sirajissani/dotconfone.git
+[submodule "prime_nvim_config"]
+	path = prime_nvim_config
+	url = https://github.com/ThePrimeagen/init.lua.git

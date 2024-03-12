@@ -1,0 +1,8 @@
+---
+BasedOnStyle                :   google
+IndentWidth                 :   4
+AlignConsecutiveAssignments :   true
+AlignConsecutiveBitFields   :   true
+AlignConsecutiveMacros      :   true
+ColumnLimit                 :   80
+...
