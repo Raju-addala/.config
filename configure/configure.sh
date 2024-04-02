@@ -1,4 +1,4 @@
-BASEDIR=$(dirname $0)
+BASEDIR=$(dirname "$(realpath  $0)")
 
 # check if CONFIGURE_DIR env exists
 if [ -z "$CONFIGURE_DIR" ]

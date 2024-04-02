@@ -5,7 +5,7 @@ fatal_check_command(){
     ( ! command -v $1 &> /dev/null ) && (echo "$1 is not installed" ; exit )
 }
 
-BASEDIR=$(dirname $0)
+BASEDIR=$(dirname "$(realpath  $0)")
 
 # check if curl exists
 
