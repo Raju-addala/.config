@@ -160,3 +160,9 @@ echo -e "\033]6;1;bg;blue;brightness;33\a"
 
 ########## enable shell logging #############
 # test "$(ps -ocomm= -p $PPID )" == 'script' || (script -F $HOME/terminal/$(date +"%Y-%m-%d_%H-%M-%S")_zsh_session.log)
+
+
+# Some user level things
+
+
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet

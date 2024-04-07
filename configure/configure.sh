@@ -18,3 +18,5 @@ then
 fi
 
 $BASEDIR/zsh/${file_name}
+$BASEDIR/vim/${file_name}
+$BASEDIR/clang/${file_name}
