@@ -1,3 +1,3 @@
 BASEDIR=$(dirname "$(realpath  $0)")
 
-ln -sfn "./.vimrc" ~/.vimrc
+ln -sfn "${BASEDIR}/.vimrc" ~/.vimrc
