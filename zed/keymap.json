@@ -1,0 +1,22 @@
+[
+  {
+    "context": "Editor",
+    "bindings": {
+      // "ctrl-shift-tab": "pane::ActivatePrevItem",
+      // "ctrl-tab": "pane::ActivateNextItem",
+      "cmd-k cmd-f": "editor::Format",
+      "cmd-shift-a": "editor::FindAllReferences",
+      "cmd-'": "editor::GoToHunk",
+      "cmd-\"": "editor::GoToPrevHunk",
+      "cmd-;": "editor::ToggleHunkDiff"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert && !menu",
+    "bindings": {
+      // put key-bindings here if you want them to work in insert mode
+      // e.g.
+      "k j": "vim::NormalBefore" // remap jj in insert mode to escape.
+    }
+  }
+]

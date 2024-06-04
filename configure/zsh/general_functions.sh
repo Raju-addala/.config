@@ -15,6 +15,12 @@ alarm(){
     sleep 1;
     beep;
 }
+emergency_alarm(){
+    for i in {1..10};
+    do
+        alarm
+    done
+}
 checkping(){
     checktask "ping -o $1 |head -5|egrep ttl"
 }
