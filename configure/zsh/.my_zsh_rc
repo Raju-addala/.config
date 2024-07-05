@@ -166,3 +166,5 @@ echo -e "\033]6;1;bg;blue;brightness;33\a"
 
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+
+export PATH=/opt/homebrew/bin:$PATH

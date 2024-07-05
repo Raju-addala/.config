@@ -59,14 +59,26 @@ ln -sfn ${BASEDIR}/.my_zsh_rc ~/.zshrc
 
 # check if fd exists
 
-if ! (command -v fd)
-then
-    # install fd
-    echo "installing fd"
-    curl -L https://github.com/sharkdp/fd/releases/download/v8.4.0/fd-musl_8.4.0_amd64.deb -o fd-musl_8.4.0_amd64.deb
-    sudo dpkg -i fd-musl_8.4.0_amd64.deb
-    fatal_check_command fd
-else
-    echo "fd is already installed"
-fi
+echo "Im here"
 
+if [ "$OSTYPE" = "linux-gnu"* ]
+then
+        # ...
+    sudo apt update
+
+    if ! (command -v fd)
+    then
+        # install fd
+        echo "installing fd"
+        curl -L https://github.com/sharkdp/fd/releases/download/v8.4.0/fd-musl_8.4.0_amd64.deb -o fd-musl_8.4.0_amd64.deb
+        sudo dpkg -i fd-musl_8.4.0_amd64.deb
+        fatal_check_command fd
+    else
+        echo "fd is already installed"
+    fi
+fi
+# elif [ "$OSTYPE" = "darwin"* ]
+# then
+    echo "mac installing fd"
+    brew install fd
+# fi
