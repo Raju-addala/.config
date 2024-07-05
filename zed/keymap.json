@@ -18,5 +18,13 @@
       // e.g.
       "k j": "vim::NormalBefore" // remap jj in insert mode to escape.
     }
+  },
+  {
+    "context": "Editor && vim_mode == normal && !menu",
+    "bindings": {
+      // put key-bindings here if you want them to work in insert mode
+      // e.g.
+      "U": "editor::Redo" // probably remove this if you can map vim mapping to
+    }
   }
 ]
