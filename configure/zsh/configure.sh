@@ -80,5 +80,21 @@ fi
 # elif [ "$OSTYPE" = "darwin"* ]
 # then
     echo "mac installing fd"
-    brew install fd
+    if ! (command -v fd)
+    then
+        # install fd
+        echo "installing fd"
+        brew install fd
+   else
+        echo "fd is already installed"
+    fi
 # fi
+    echo "mac installing rg"
+    if ! (command -v rg)
+    then
+        # install rg
+        echo "installing rg"
+        brew install ripgrep
+   else
+        echo "ripgrep is already installed"
+    fi
