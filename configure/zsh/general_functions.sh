@@ -22,14 +22,15 @@ emergency_alarm(){
     done
 }
 checkping(){
-    checktask "ping -o $1 |head -5|egrep ttl"
+    checktask "ping -o $1 |head -5|egrep ttl" "IP is online"
 }
 checknotping(){
-    checktask "ping -o $1 |head -5|egrep timeout"
+    checktask "ping -o $1 |head -5|egrep timeout" "IP is offline"
 }
 
 checktask(){
     x=`eval $1`
+    message=${2:-"None"}
     while [[ `echo $x | wc -c` -le 1 ]]
     do
         x=`eval $1`
@@ -38,7 +39,12 @@ checktask(){
         sleep 5
     done
     echo "checktask: $1 , output: **$x** end"
-    alarm
+    if [[ $message == "None" ]]
+    then 
+        alarm
+    else
+        say $message
+    fi
 }
 
 
@@ -69,3 +75,33 @@ cscope_refresh(){
     export CSCOPE_DB="$PWD/cscope.out"
     echo "Exported CSCOPE_DB to: '$CSCOPE_DB'"
 }
+
+get_charge(){
+    system_profiler SPPowerDataType | grep "State of Charge" | awk '{print $5}'
+}
+
+start_charge_at(){
+    desired_chg=$1
+    current_chg=100
+    while [[ $current_chg -gt $desired_chg ]]
+    do
+        current_chg=`get_charge`
+        echo "charging: $current_chg"
+        sleep 10
+    done
+    say "Charge is $current_chg"
+}
+
+
+stop_charge_at(){
+    desired_chg=$1
+    current_chg=0
+    while [[ $current_chg -lt $desired_chg ]]
+    do
+        current_chg=`get_charge`
+        echo "charging: $current_chg"
+        sleep 10
+    done
+    say "Charge is $current_chg"
+}
+
