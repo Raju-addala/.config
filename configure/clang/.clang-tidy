@@ -1,7 +1,27 @@
 ---
-Checks: '-*,modernize-use-auto,performance-unnecessary-copy-initialization,bugprone-*,readability-*,clang-diagnostic-*,google-readability-*,cppcoreguidelines-*,clang-analyzer-*,linuxkernel-*,llvm-*,llvmlibc-*'
+Checks: "abseil-*,
+        altera-*,
+        android-*,
+        cppcoreguidelines-* ,
+        fuchsia-*,
+        google-*,
+        llvm*,
+        zircon-*,
+        misc-non-private-member-variables-in-classes,
+        performance-unnecessary-copy-initialization ,
+        bugprone-* ,
+        readability-* ,
+        clang-diagnostic-* ,
+        clang-analyzer-* ,
+        linuxkernel-* ,
+        cppcoreguidelines-pro-type-member-init,
+        -llvmlibc-callee-namespace,
+        -modernize-*,
+    "
+CheckOptions:
+      readability-simplify-boolean-expr.SimplifyDeMorgan: 'true'
+    #   readability-simplify-boolean-expr.ChainedConditionalReturn: 'true'
 WarningsAsErrors: true
 HeaderFilterRegex: ''
-AnalyzeTemporaryDtors: false
 FormatStyle:     google
 ...
