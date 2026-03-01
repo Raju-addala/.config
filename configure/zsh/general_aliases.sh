@@ -24,10 +24,12 @@ alias terminaltask='while [ 1 -ne 1 ]; do sleep 1; echo no match; done;echo Task
 alias tgrep='find . -type f -print0 | xargs -0 -P `sysctl -n hw.activecpu` grep --color=always'
 alias unusual='grep -r -i "wrong\|error\|abort\|fail\|segmentation"'
 alias which-command=whence
-alias workspace='cd ~/workspace'
+alias ws='cd ~/workspace'
 alias zrc='source ~/.zshrc'
 alias zrgrep='rg -z -a --no-ignore -i'
 alias aliasrefresh='source ~/terminalfiles/myaliases.sh'
+alias nvfzf='nvim $(fzf)'
+alias cdfzf='cd "$(dirname "$(fzf)")"'
 
 ########## setup alises
 

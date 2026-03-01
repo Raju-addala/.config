@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.user.batterydaemon</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/bin/python3</string>
+    <string>/Users/rajuaddala/.my_config/battery_monitor.py</string>
+        <string>--check-interval</string>
+        <string>60</string>
+        <string>--speak-interval</string>
+        <string>300</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+    <key>StandardErrorPath</key>
+    <string>/Users/rajuaddala/.my_config/battery.err</string>
+    <key>StandardOutPath</key>
+    <string>/Users/rajuaddala/.my_config/battery.out</string>
+    <key>WorkingDirectory</key>
+    <string>/Users/rajuaddala/.my_config</string>
+</dict>
+</plist>
